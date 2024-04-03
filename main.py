@@ -1,15 +1,20 @@
+import logging
 from models.mercado import Mercado
 from utils.validaciones import validar_fecha, validar_cantidad
 
+# Configuración de logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 def main():
     mercado = Mercado()
     mercado.cargar_desde_archivo("productos.txt")
 
     while True:
-        print("\n1. Agregar producto")
-        print("2. Exportar a archivo")
-        print("3. Salir")
+        logger.info("\n1. Agregar producto")
+        logger.info("\n2. Exportar a archivo")
+        logger.info("\n3. buscar producto")
+        logger.info("\n4. Salir")
 
         opcion = input("Seleccione una opción: ")
 
@@ -27,18 +32,25 @@ def main():
                 cantidad = input("Cantidad inválida. Ingrese la cantidad nuevamente: ")
 
             mercado.agregar_producto(nombre, cantidad, fecha_compra, fecha_vencimiento)
-            print("Producto agregado correctamente.")
+            logger.info("Producto agregado correctamente.")
 
         elif opcion == "2":
             mercado.exportar_a_texto()
-            print("Exportación completada.")
-
+            logger.info("Exportación completada.")
+            
         elif opcion == "3":
-            print("Saliendo del programa...")
+            nombre_busqueda = input("Ingrese el nombre del producto a buscar: ")
+            if mercado.buscar_producto(nombre_busqueda):
+                logger.info("El producto existe en el mercado.")
+            else:
+                logger.info("El producto no existe en el mercado.")
+
+        elif opcion == "4":
+            logger.info("Saliendo del programa...")
             break
 
         else:
-            print("Opción no válida. Por favor, seleccione una opción válida.")
+            logger.warning("Opción no válida. Por favor, seleccione una opción válida.")
 
 
 if __name__ == "__main__":

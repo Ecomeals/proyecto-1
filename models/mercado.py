@@ -24,3 +24,11 @@ class Mercado:
                     fecha_compra = datos[2].split(": ")[1]
                     fecha_vencimiento = datos[3].split(": ")[1]
                     self.agregar_producto(nombre, cantidad, fecha_compra, fecha_vencimiento)
+                    
+    def buscar_producto(self, nombre_producto):
+        for producto in self.productos:
+            if producto.nombre == nombre_producto:
+                return True
+            
+        return False
+    
