@@ -2,10 +2,11 @@ from models.producto import Producto
 from datetime import datetime, timedelta
 import unittest
 
+
 class TestProducto(unittest.TestCase):
     def test_esta_vencido(self):
         # Caso 1: producto vencido
-        producto_vencido = Producto("Producto vencido", 10, "2025-01-03", "2022-01-02")
+        producto_vencido = Producto("Producto vencido", 10, "2022-01-01", "2022-01-02")
         self.assertTrue(producto_vencido.esta_vencido())
 
         # Caso 2: producto no vencido
