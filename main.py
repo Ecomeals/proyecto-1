@@ -14,7 +14,8 @@ def main():
         logger.info("\n1. Agregar producto")
         logger.info("\n2. Exportar a archivo")
         logger.info("\n3. buscar producto")
-        logger.info("\n4. Salir")
+        logger.info("\n4. Ver productos")
+        logger.info("\n5. Salir")
 
         opcion = input("Seleccione una opción: ")
 
@@ -45,7 +46,10 @@ def main():
             else:
                 logger.info("El producto no existe en el mercado.")
 
-        elif opcion == "4":
+        elif opcion== "4":
+            mercado.ver_productos()
+
+        elif opcion == "5":
             logger.info("Saliendo del programa...")
             break
 
