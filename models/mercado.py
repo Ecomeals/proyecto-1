@@ -27,7 +27,7 @@ class Mercado:
                     
     def buscar_producto(self, nombre_producto):
         for producto in self.productos:
-            if producto.nombre == nombre_producto:
+            if producto.nombre.lower() == nombre_producto:
                 return True
             
         return False

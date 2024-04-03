@@ -1,1 +1,2 @@
-Nombre: arroz, Cantidad: 2, Fecha de compra: 2024-03-20, Fecha de vencimiento: 2024-04-03, No vencido
+Nombre: arroz, Cantidad: 2, Fecha de compra: 2024-03-20, Fecha de vencimiento: 2024-04-03, Vencido
+Nombre: arroz, Cantidad: 2, Fecha de compra: 2024-12-01, Fecha de vencimiento: 2024-12-02, No vencido

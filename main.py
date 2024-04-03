@@ -3,7 +3,7 @@ from models.mercado import Mercado
 from utils.validaciones import validar_fecha, validar_cantidad
 
 # Configuración de logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO, format='%(message)s')
 logger = logging.getLogger(__name__)
 
 def main():

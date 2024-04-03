@@ -1,8 +1,4 @@
-import sys
-
-sys.path.append("D:\\Nueva carpeta\\Entrega-tecnicas-de-programacion-main\\models")
-
-from producto import Producto
+from models.producto import Producto
 from datetime import datetime, timedelta
 import unittest
 
