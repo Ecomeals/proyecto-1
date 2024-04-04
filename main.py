@@ -6,6 +6,7 @@ from utils.validaciones import validar_fecha, validar_cantidad
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 logger = logging.getLogger(__name__)
 
+
 def main():
     mercado = Mercado()
     mercado.cargar_desde_archivo("productos.txt")
@@ -33,7 +34,8 @@ def main():
                 cantidad = input("Cantidad inválida. Ingrese la cantidad nuevamente: ")
 
             mercado.agregar_producto(nombre, cantidad, fecha_compra, fecha_vencimiento)
-            logger.info("Producto agregado correctamente.")
+
+            logger.info("Producto agregado correctamente, recuerde exportar el archivo en la opción 2.")
 
         elif opcion == "2":
             mercado.exportar_a_texto()
@@ -46,7 +48,7 @@ def main():
             else:
                 logger.info("El producto no existe en el mercado.")
 
-        elif opcion== "4":
+        elif opcion == "4":
             mercado.ver_productos()
 
         elif opcion == "5":

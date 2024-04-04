@@ -1,6 +1,9 @@
 from datetime import datetime
 
+
 class Producto:
+
+#Método constructor
     def __init__(self, nombre, cantidad, fecha_compra, fecha_vencimiento):
         self.nombre = nombre
         self.cantidad = cantidad
